@@ -20,7 +20,7 @@ export default function SignupPage() {
   const router = useRouter();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const [step, setStep] = useState<1 | 2 | 3 | 4>(1); // 1: Credentials, 2: Country & Currency, 3: Facial Biometrics, 4: ID Issued
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
@@ -30,7 +30,6 @@ export default function SignupPage() {
   const [currency, setCurrency] = useState('');
   const [nationalId, setNationalId] = useState('');
 
-  // Camera & Facial Biometrics state
   const [cameraActive, setCameraActive] = useState(false);
   const [scanning, setScanning] = useState(false);
   const [faceVerified, setFaceVerified] = useState(false);
@@ -133,7 +132,6 @@ export default function SignupPage() {
 
         {error && <div className="bg-red-50 text-red-700 p-3 rounded-md text-sm border border-red-200 font-medium">{error}</div>}
 
-        {/* STEP 1: BASIC DETAILS */}
         {step === 1 && (
           <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setStep(2); }}>
             <div>
@@ -171,7 +169,6 @@ export default function SignupPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 className="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-md text-gray-900 bg-white font-medium focus:ring-2 focus:ring-blue-500"
-                placeholder=""
               />
             </div>
 
@@ -184,7 +181,6 @@ export default function SignupPage() {
                   value={facilityName}
                   onChange={(e) => setFacilityName(e.target.value)}
                   className="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-md text-gray-900 bg-white font-medium focus:ring-2 focus:ring-blue-500"
-                  placeholder=""
                 />
               </div>
             )}
@@ -197,7 +193,6 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-md text-gray-900 bg-white font-medium focus:ring-2 focus:ring-blue-500"
-                placeholder=""
               />
             </div>
 
@@ -209,7 +204,6 @@ export default function SignupPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 block w-full px-3.5 py-2.5 border border-gray-300 rounded-md text-gray-900 bg-white font-medium focus:ring-2 focus:ring-blue-500"
-                placeholder=""
               />
             </div>
 
@@ -222,7 +216,6 @@ export default function SignupPage() {
           </form>
         )}
 
-        {/* STEP 2: PAN-AFRICAN REGION & LOCAL CURRENCY */}
         {step === 2 && (
           <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setStep(3); }}>
             <div>
@@ -280,7 +273,6 @@ export default function SignupPage() {
           </form>
         )}
 
-        {/* STEP 3: LIVE FACIAL BIOMETRIC SCAN */}
         {step === 3 && (
           <div className="space-y-5 text-center">
             <p className="text-sm text-gray-600">Activate your device camera to complete mandatory facial biometric verification.</p>
@@ -347,7 +339,6 @@ export default function SignupPage() {
           </div>
         )}
 
-        {/* STEP 4: UNIQUE SIGN-IN ID ISSUED */}
         {step === 4 && (
           <div className="space-y-6 text-center">
             <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
