@@ -125,7 +125,7 @@ export default function SignupPage() {
             <span className="text-blue-600">{step === 1 ? 'Credentials' : step === 2 ? 'Pan-African Region' : step === 3 ? 'Facial Scan' : 'ID Assigned'}</span>
           </div>
           <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-            <div className={g-blue-600 h-full transition-all duration-300 }></div>
+            <div className={`bg-blue-600 h-full transition-all duration-300 ${getProgressWidth()}`}></div>
           </div>
           <h2 className="text-center text-2xl font-extrabold text-gray-900 mt-6">PregFunds Commercial Onboarding</h2>
         </div>
