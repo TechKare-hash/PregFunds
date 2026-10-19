@@ -58,14 +58,14 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={() => setRole('hospital')}
-                className={py-2 px-4 border rounded-md text-sm font-medium transition-colors }
+                className={role === 'hospital' ? 'py-2 px-4 border rounded-md text-sm font-medium transition-colors bg-blue-600 text-white border-blue-600' : 'py-2 px-4 border rounded-md text-sm font-medium transition-colors bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}
               >
                 Healthcare Facility
               </button>
               <button
                 type="button"
                 onClick={() => setRole('grantor')}
-                className={py-2 px-4 border rounded-md text-sm font-medium transition-colors }
+                className={role === 'grantor' ? 'py-2 px-4 border rounded-md text-sm font-medium transition-colors bg-blue-600 text-white border-blue-600' : 'py-2 px-4 border rounded-md text-sm font-medium transition-colors bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}
               >
                 Grantor / Donor
               </button>
